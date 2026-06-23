@@ -39,12 +39,20 @@ function copyIp() {
 
     navigator.clipboard.writeText(ip);
 
-    alert("IP copied!");
+    const button =
+        document.querySelector("button");
+
+    button.textContent = "Copied!";
+
+    setTimeout(() => {
+        button.textContent = "Copy IP";
+    }, 2000);
 }
 
 function loadBrowserInfo() {
 
-    const userAgent = navigator.userAgent;
+    const userAgent =
+        navigator.userAgent;
 
     let browser = "Unknown";
 
@@ -67,25 +75,25 @@ function loadBrowserInfo() {
 
 function loadOperatingSystem() {
 
-    const platform =
+    const userAgent =
         navigator.userAgent;
 
     let os = "Unknown";
 
-    if (platform.includes("Windows")) {
+    if (userAgent.includes("Windows")) {
         os = "Windows";
     }
-    else if (platform.includes("Linux")) {
-        os = "Linux";
-    }
-    else if (platform.includes("Android")) {
+    else if (userAgent.includes("Android")) {
         os = "Android";
     }
-    else if (platform.includes("Mac")) {
+    else if (userAgent.includes("iPhone")) {
+        os = "iOS";
+    }
+    else if (userAgent.includes("Mac")) {
         os = "macOS";
     }
-    else if (platform.includes("iPhone")) {
-        os = "iOS";
+    else if (userAgent.includes("Linux")) {
+        os = "Linux";
     }
 
     document.getElementById("os").textContent =
