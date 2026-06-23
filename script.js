@@ -1,30 +1,41 @@
-async function carregarIP() {
+async function loadIpData() {
 
     try {
 
-        const resposta =
-            await fetch("https://api.ipify.org?format=json");
+        const response =
+            await fetch("https://ipapi.co/json/");
 
-        const dados = await resposta.json();
-
-        document.getElementById("ip").textContent =
-            dados.ip;
-
-    } catch {
+        const data =
+            await response.json();
 
         document.getElementById("ip").textContent =
-            "Erro ao obter IP";
+            data.ip;
+
+        document.getElementById("country").textContent =
+            data.country_name;
+
+        document.getElementById("region").textContent =
+            data.region;
+
+        document.getElementById("city").textContent =
+            data.city;
+
+        document.getElementById("isp").textContent =
+            data.org;
+
+    } catch (error) {
+
+        document.getElementById("ip").textContent =
+            "Unavailable";
     }
 }
 
-function copiarIP() {
+function copyIp() {
 
     const ip =
         document.getElementById("ip").textContent;
 
     navigator.clipboard.writeText(ip);
-
-    alert("IP copiado!");
 }
 
-carregarIP();
+loadIpData();
