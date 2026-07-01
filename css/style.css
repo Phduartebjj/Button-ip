@@ -13,10 +13,6 @@ body{
     padding:20px;
 }
 
-a:visited{
-    color: inherit;
-}
-
 .container{
     width:100%;
     max-width:1000px;
@@ -33,6 +29,14 @@ a:visited{
 .logo{
     font-size:1.5rem;
     font-weight:bold;
+}
+
+.logo a {
+    color: white;
+}
+
+.logo a:visited{
+    color: inherit;
 }
 
 .nav-links{

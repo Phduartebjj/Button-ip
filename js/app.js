@@ -40,7 +40,7 @@ function copyIp() {
 
   navigator.clipboard.writeText(ip);
 
-  button.textContent = "Copied!";
+  buttonCopyIp.textContent = "Copied!";
 
   setTimeout(() => {
     button.textContent = "Copy IP";
