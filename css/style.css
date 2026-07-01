@@ -13,6 +13,10 @@ body{
     padding:20px;
 }
 
+a:visited{
+    color: inherit;
+}
+
 .container{
     width:100%;
     max-width:1000px;
